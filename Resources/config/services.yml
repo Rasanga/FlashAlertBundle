@@ -1,7 +1,5 @@
-parameters:
-#    ras_alert_notifications.example.class: Ras\Bundle\AlertNotificationsBundle\Example
-
 services:
-#    ras_alert_notifications.example:
-#        class: %ras_alert_notifications.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]
+    Ras.Alert.AlertService:
+        class:        Ras\Bundle\AlertNotificationsBundle\Service\AlertService
+        arguments:
+            session:  "@Session"

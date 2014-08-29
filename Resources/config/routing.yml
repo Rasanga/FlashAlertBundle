@@ -1,3 +1,0 @@
-ras_alert_notifications_homepage:
-    path:     /hello/{name}
-    defaults: { _controller: RasAlertNotificationsBundle:Default:index }

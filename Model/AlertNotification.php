@@ -12,7 +12,7 @@
 namespace Ras\Bundle\AlertNotificationsBundle\Model;
 
 
-class AlertNotification
+class AlertNotification implements AlertNotificationInterface
 {
 
     /**
