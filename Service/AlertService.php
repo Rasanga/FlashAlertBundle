@@ -54,7 +54,7 @@ class AlertService
      */
     public function getAlerts()
     {
-        $alerts = [];
+        $alerts = array();
 
         foreach (self::getAlertTypes() as $type) {
             $messages = $this->session->getFlashBag()->get($type);
@@ -76,7 +76,7 @@ class AlertService
      */
     protected function createAlertsForType($type, array $messages)
     {
-        $alerts = [];
+        $alerts = array();
 
         foreach ($messages as $msg) {
             $alerts[] = new AlertNotification($type, $msg);
