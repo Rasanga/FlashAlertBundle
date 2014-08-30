@@ -1,0 +1,29 @@
+{
+    "name": "ras/alert-notification-bundle",
+    "license": "MIT",
+    "type": "symfony-bundle",
+    "description": "Symfony2 Alert Notification Bundle",
+    "keywords": [
+        "Alert",
+        "Notification",
+        "symfony",
+        "Bundle",
+        "feedback",
+        "error",
+        "warning"
+    ],
+    "authors": [
+        {
+            "name": "Rasanga Perera",
+            "email": "rasangaperera@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3"
+    },
+    "target-dir": "Ras/Bundle/AlertNotificationsBundle/",
+    "autoload": {
+        "psr-0": { "Ras\\Bundle\\AlertNotificationsBundle": "" }
+    },
+    "minimum-stability": "dev"
+}
