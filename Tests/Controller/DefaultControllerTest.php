@@ -1,6 +1,6 @@
 <?php
 
-namespace Ras\Bundle\AlertNotificationsBundle\Tests\Controller;
+namespace Ras\Bundle\AlertNotificationBundle\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 

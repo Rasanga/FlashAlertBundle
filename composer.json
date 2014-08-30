@@ -4,8 +4,8 @@
     "type": "symfony-bundle",
     "description": "Symfony2 Alert Notification Bundle",
     "keywords": [
-        "Alert",
-        "Notification",
+        "alert",
+        "notification",
         "symfony",
         "Bundle",
         "feedback",
@@ -21,9 +21,9 @@
     "require": {
         "php": ">=5.3.3"
     },
-    "target-dir": "Ras/Bundle/AlertNotificationsBundle/",
+    "target-dir": "Ras/Bundle/AlertNotificationBundle/",
     "autoload": {
-        "psr-0": { "Ras\\Bundle\\AlertNotificationsBundle": "" }
+        "psr-0": { "Ras\\Bundle\\AlertNotificationBundle": "" }
     },
     "minimum-stability": "dev"
 }

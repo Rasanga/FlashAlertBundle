@@ -9,11 +9,11 @@
  * Copyright (c) 2014, The MIT License (MIT)
  */
 
-namespace Ras\Bundle\AlertNotificationsBundle\Service;
+namespace Ras\Bundle\AlertNotificationBundle\Service;
 
 
-use Ras\Bundle\AlertNotificationsBundle\Model\AlertNotification;
-use Ras\Bundle\AlertNotificationsBundle\Model\AlertNotificationInterface;
+use Ras\Bundle\AlertNotificationBundle\Model\AlertNotification;
+use Ras\Bundle\AlertNotificationBundle\Model\AlertNotificationInterface;
 use Symfony\Component\HttpFoundation\Session\Session;
 
 class AlertService

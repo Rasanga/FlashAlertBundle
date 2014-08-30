@@ -9,7 +9,7 @@
  * Copyright (c) 2014, The MIT License (MIT)
  */
 
-namespace Ras\Bundle\AlertNotificationsBundle\Model;
+namespace Ras\Bundle\AlertNotificationBundle\Model;
 
 
 class AlertNotification implements AlertNotificationInterface

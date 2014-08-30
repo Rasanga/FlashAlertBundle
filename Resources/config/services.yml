@@ -1,5 +1,5 @@
 services:
     Ras.Alert.AlertService:
-        class:        Ras\Bundle\AlertNotificationsBundle\Service\AlertService
+        class:        Ras\Bundle\AlertNotificationBundle\Service\AlertService
         arguments:
             session:  "@Session"
