@@ -9,11 +9,11 @@
  * Copyright (c) 2014, The MIT License (MIT)
  */
 
-namespace Ras\Bundle\AlertNotificationsBundle\Service;
+namespace Ras\Bundle\AlertNotificationBundle\Service;
 
 
-use Ras\Bundle\AlertNotificationsBundle\Model\AlertNotification;
-use Ras\Bundle\AlertNotificationsBundle\Model\AlertNotificationInterface;
+use Ras\Bundle\AlertNotificationBundle\Model\AlertNotification;
+use Ras\Bundle\AlertNotificationBundle\Model\AlertNotificationInterface;
 use Symfony\Component\HttpFoundation\Session\Session;
 
 class AlertService
@@ -54,7 +54,7 @@ class AlertService
      */
     public function getAlerts()
     {
-        $alerts = [];
+        $alerts = array();
 
         foreach (self::getAlertTypes() as $type) {
             $messages = $this->session->getFlashBag()->get($type);
@@ -76,7 +76,7 @@ class AlertService
      */
     protected function createAlertsForType($type, array $messages)
     {
-        $alerts = [];
+        $alerts = array();
 
         foreach ($messages as $msg) {
             $alerts[] = new AlertNotification($type, $msg);
