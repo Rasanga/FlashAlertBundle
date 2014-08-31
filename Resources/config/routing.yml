@@ -1,3 +1,3 @@
-ras_alert_notifications_display_alerts:
+ras_alert_notification_display_alerts:
     path:     /display_alerts
     defaults: { _controller: RasAlertNotificationBundle:Alert:displayAlerts }
