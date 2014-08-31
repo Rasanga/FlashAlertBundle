@@ -33,7 +33,7 @@ class AlertController extends Controller
      */
     protected function getAlertPublishingService()
     {
-        return $this->get("Ras.Alert.AlertPublishingService");
+        return $this->get('Ras.Alert.AlertPublishingService');
     }
 
 } 
