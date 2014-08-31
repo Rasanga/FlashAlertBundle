@@ -42,7 +42,7 @@ class AlertReportingService extends AbstractAlertService
      *
      * @param string $message
      */
-    public function addErrorAlert($message)
+    public function addError($message)
     {
         $this->addAlertNotification(
             new AlertNotification(AlertNotificationInterface::ERROR_ALERT, $message)
@@ -54,7 +54,7 @@ class AlertReportingService extends AbstractAlertService
      *
      * @param string $message
      */
-    public function addSuccessAlert($message)
+    public function addSuccess($message)
     {
         $this->addAlertNotification(
             new AlertNotification(AlertNotificationInterface::SUCCESS_ALERT, $message)
@@ -66,7 +66,7 @@ class AlertReportingService extends AbstractAlertService
      *
      * @param string $message
      */
-    public function addInfoAlert($message)
+    public function addInfo($message)
     {
         $this->addAlertNotification(
             new AlertNotification(AlertNotificationInterface::INFO_ALERT, $message)
@@ -74,11 +74,11 @@ class AlertReportingService extends AbstractAlertService
     }
 
     /**
-     * Adds block (warning) alert notification to session flash bag
+     * Adds warning (block) alert notification to session flash bag
      *
      * @param string $message
      */
-    public function addBlockAlert($message)
+    public function addWarning($message)
     {
         $this->addAlertNotification(
             new AlertNotification(AlertNotificationInterface::BLOCK_ALERT, $message)

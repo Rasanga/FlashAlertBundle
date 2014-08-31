@@ -33,7 +33,7 @@ interface AlertNotificationInterface
     /**
      * @var string
      */
-    const BLOCK_ALERT     = "block";
+    const BLOCK_ALERT     = "warning";
 
     /**
      * @return string
