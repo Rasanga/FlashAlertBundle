@@ -65,8 +65,8 @@ Add the following PHP code to report an alert message
 <?php
     $this->get('Ras.Alert.AlertReportingService')->addError("Access denied");
 ```
-You can choose one of the following functions to
-call from ```$this->get('Ras.Alert.AlertReportingService')```
+You can choose one of the following functions to call from <br />
+```$this->get('Ras.Alert.AlertReportingService')```
 ```
     addSuccess()
     addError()
