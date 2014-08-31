@@ -64,7 +64,7 @@ Add the following PHP code to report an alert message
 ```
     $this->get('Ras.Alert.AlertReportingService')->addError("Access denied");
 ```
-You can choose one of the following functions to call from 
+**Note:** You can choose one of the following functions to call from 
 $this->get('Ras.Alert.AlertReportingService') 
 ```
     addSuccess()
@@ -74,7 +74,7 @@ $this->get('Ras.Alert.AlertReportingService')
 ```
 
 ### Display alert notifications
-**Note:** Add the following twig code where you want to display alert messages
+Add the following twig code where you want to display alert messages
 ```
     {{ render(controller('RasAlertNotificationBundle:Alert:displayAlerts')) }}
 ```
