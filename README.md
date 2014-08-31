@@ -1,6 +1,6 @@
 AlertNotificationsBundle
 ========================
-AlertNotificationBundle is an open source Bundle which simplifies displaying alert notifications (flash messages) such as success, error, block and info
+AlertNotificationBundle is an open source Bundle which simplifies displaying alert notifications (flash messages) such as success, error, info and warning
 
 [![Build Status](https://scrutinizer-ci.com/g/rasanga/AlertNotificationBundle/badges/build.png?b=master)](https://scrutinizer-ci.com/g/rasanga/AlertNotificationBundle/build-status/master)
 
@@ -62,7 +62,6 @@ Usage
 ### Add alert notifications
 Add the following PHP code to report an alert message
 ```
-<?php
     $this->get('Ras.Alert.AlertReportingService')->addError("Access denied");
 ```
 You can choose one of the following functions to call from <br />
