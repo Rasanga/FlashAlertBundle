@@ -1,5 +1,10 @@
 services:
-    Ras.Alert.AlertService:
-        class:        Ras\Bundle\AlertNotificationBundle\Service\AlertService
+    Ras.Alert.AlertReportingService:
+        class:        Ras\Bundle\AlertNotificationBundle\Service\AlertReportingService
+        arguments:
+            session:  "@Session"
+
+    Ras.Alert.AlertPublishingService:
+        class:        Ras\Bundle\AlertNotificationBundle\Service\AlertPublishingService
         arguments:
             session:  "@Session"

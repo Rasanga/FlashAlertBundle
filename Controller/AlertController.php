@@ -22,18 +22,18 @@ class AlertController extends Controller
         return $this->render(
             'RasAlertNotificationBundle:Alert:alerts.html.twig',
             array(
-                'alertNotifications'    => $this->getAlertService()->getAlerts()
+                'alertNotifications'    => $this->getAlertPublishingService()->getAlerts()
             )
         );
     }
 
     /**
-     * @return \Ras\Bundle\AlertNotificationBundle\Service\AlertService
+     * @return \Ras\Bundle\AlertNotificationBundle\Service\AlertPublishingService
      *
      */
-    protected function getAlertService()
+    protected function getAlertPublishingService()
     {
-        return $this->get("Ras.Alert.AlertService");
+        return $this->get("Ras.Alert.AlertPublishingService");
     }
 
 } 
