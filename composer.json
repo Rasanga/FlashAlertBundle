@@ -8,9 +8,7 @@
         "notification",
         "symfony",
         "Bundle",
-        "feedback",
-        "error",
-        "warning"
+        "feedback"
     ],
     "authors": [
         {
