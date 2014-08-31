@@ -27,7 +27,7 @@ $ git submodule update --init
 
 ### Step 2: Configure the Autoloader
 If you are not using composer.
-Add the following to your `autoload.php` :
+Add the following to your `autoload.php`:
 ```php
 <?php
 ...
@@ -51,7 +51,7 @@ public function registerBundles()
 
 ### Step 4: Configure the bundle
 ***Assetic Configuration***
-Add the following to the `config.(yml,xml)` file
+Add the following to the `config.(yml,xml)` file:
 ```
 assetic:
     bundles:        [RasAlertNotificationBundle]
@@ -60,12 +60,12 @@ assetic:
 Usage
 =====
 ### Add alert notifications
-Add the following PHP code to report an alert message
+Add the following PHP code to report an alert message:
 ```
     $this->get('Ras.Alert.AlertReportingService')->addError("Access denied");
 ```
 **Note:** You can choose one of the following functions to call from 
-$this->get('Ras.Alert.AlertReportingService') 
+`$this->get('Ras.Alert.AlertReportingService')`
 ```
     addSuccess()
     addError()
@@ -74,7 +74,7 @@ $this->get('Ras.Alert.AlertReportingService')
 ```
 
 ### Display alert notifications
-Add the following twig code where you want to display alert messages
+Add the following twig code where you want to display alert messages:
 ```
     {{ render(controller('RasAlertNotificationBundle:Alert:displayAlerts')) }}
 ```
