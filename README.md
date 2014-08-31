@@ -1,58 +1,41 @@
 AlertNotificationsBundle
 ========================
-
-Symfony2 Alert Notification Bundle
+AlertNotificationBundle is an open source Bundle which simplifies displaying alert notifications (flash messages) such as success, error, block and info
 
 [![Build Status](https://scrutinizer-ci.com/g/rasanga/AlertNotificationBundle/badges/build.png?b=master)](https://scrutinizer-ci.com/g/rasanga/AlertNotificationBundle/build-status/master)
 
-# What is AlertNotificationBundle?
-AlertNotificationBundle is an open source Bundle which simplifies displaying alert notifications (flash messages) such as success, error, block and info 
-
-## LICENSE
-AlertNotificationBundle is licensed under the MIT Open Source license.
-
 Installation
 ============
-
 ## Step 1: Download the AlertNotificationBundle
-
 ***Using Composer***
-
 Add the following to the "require" section of your `composer.json` file:
 
 ```
     "ras/alert-notification-bundle": "dev-master"
 ```
-
 And update your dependencies
-
 ```
     php composer.phar update
 ```
 
 ***Using submodules***
-
-Excecute following command on your project root:
-
+Execute the following command on your project root:
 ``` bash
 $ git submodule add git@github.com:rasanga/AlertNotificationBundle.git vendor/bundles/Ras/AlertNotificationBundle
 $ git submodule update --init
 ```
 
 ## Step 2: Configure the Autoloader
-
 If you are not using composer.
-Add it to your `autoload.pp` :
-
+Add the following to your `autoload.php` :
 ```php
 <?php
 ...
 'Ras' => __DIR__.'/../vendor/bundles',
 ```
+
 ## Step 3: Enable the bundle
-
 Registers the bundle in your `app/AppKernel.php`:
-
 ```php
 <?php
 ...
@@ -67,11 +50,26 @@ public function registerBundles()
 ```
 
 ## Step 4: Configure the bundle
-
 ***Assetic Configuration***
-
-Add the following to the `config.yml` file
+Add the following to the `config.(yml,xml)` file
 ```
 assetic:
- bundles:        [RasAlertNotificationBundle]
- ```
+    bundles:        [RasAlertNotificationBundle]
+```
+
+Usage
+=====
+## Add alert notifications
+Add the following PHP code to report an alert message
+```
+    $this->get('Ras.Alert.AlertReportingService')->addSuccessAlert("Profile updated");
+```
+## Display alert notifications
+Add the following twig code where you want to display alert messages
+```
+    {{ render(controller('RasAlertNotificationBundle:Alert:displayAlert')) }}
+```
+
+LICENSE
+=======
+AlertNotificationBundle is licensed under the MIT Open Source license.
