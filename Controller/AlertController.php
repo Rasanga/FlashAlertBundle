@@ -17,7 +17,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 class AlertController extends Controller
 {
 
-    public function displayAlertAction()
+    public function displayAlertsAction()
     {
         return $this->render(
             'RasAlertNotificationBundle:Alert:alerts.html.twig',
