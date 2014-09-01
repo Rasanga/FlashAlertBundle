@@ -33,14 +33,16 @@ class AlertControllerTest extends WebTestCase
         $client = static::createClient();
         /** @var AlertReportingService $alertService */
         $alertService = $client->getContainer()->get('Ras.Alert.AlertReportingService');
-        $alertMessage = "Test error message";
+        $alertMessage = "Test error alert notification";
         $alertService->addError($alertMessage);
         $crawler1 = $client->request('GET', '/display_alerts');
 
-        $this->assertTrue($crawler1->filter("html:contains(\"{$alertMessage}\")")->count() > 0);
+        // Test: alert notification that has been added recently
+        $this->assertTrue($crawler1->filter("html:contains(\"{$alertMessage}\")")->count() === 1);
 
         $crawler2 = $client->request('GET', '/display_alerts');
 
+        // Test: alert notification has already been retrieved
         $this->assertTrue($crawler2->filter("html:contains(\"{$alertMessage}\")")->count() === 0);
     }
 
