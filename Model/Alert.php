@@ -12,7 +12,7 @@
 namespace Ras\Bundle\FlashAlertBundle\Model;
 
 
-class Alert implements AlertNotificationInterface
+class Alert implements AlertInterface
 {
 
     /**

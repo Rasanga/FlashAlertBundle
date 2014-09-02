@@ -9,11 +9,11 @@
  * Copyright (c) 2014, The MIT License (MIT)
  */
 
-namespace Ras\Bundle\AlertNotificationBundle\Service;
+namespace Ras\Bundle\FlashAlertBundle\Service;
 
 
-use Ras\Bundle\AlertNotificationBundle\Model\AlertNotification;
-use Ras\Bundle\AlertNotificationBundle\Model\AlertNotificationInterface;
+use Ras\Bundle\FlashAlertBundle\Model\Alert;
+use Ras\Bundle\FlashAlertBundle\Model\AlertInterface;
 use Symfony\Component\HttpFoundation\Session\Session;
 
 class AlertPublishingService extends AbstractAlertService
@@ -36,17 +36,17 @@ class AlertPublishingService extends AbstractAlertService
     public static function getAlertTypes()
     {
         return array(
-            AlertNotificationInterface::ERROR_ALERT,
-            AlertNotificationInterface::SUCCESS_ALERT,
-            AlertNotificationInterface::INFO_ALERT,
-            AlertNotificationInterface::BLOCK_ALERT
+            AlertInterface::ERROR_ALERT,
+            AlertInterface::SUCCESS_ALERT,
+            AlertInterface::INFO_ALERT,
+            AlertInterface::BLOCK_ALERT
         );
     }
 
     /**
      * Gets alert notification from session flash bag
      *
-     * @return AlertNotification[]
+     * @return Alert[]
      */
     public function getAlerts()
     {
@@ -68,14 +68,14 @@ class AlertPublishingService extends AbstractAlertService
      *
      * @param string $type
      * @param array $messages
-     * @return AlertNotification[]
+     * @return Alert[]
      */
     protected function createAlertsForType($type, array $messages)
     {
         $alerts = array();
 
         foreach ($messages as $msg) {
-            $alerts[] = new AlertNotification($type, $msg);
+            $alerts[] = new Alert($type, $msg);
         }
 
         return $alerts;

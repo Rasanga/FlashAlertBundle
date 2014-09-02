@@ -1,8 +1,8 @@
 {
-    "name": "ras/alert-notification-bundle",
+    "name": "ras/flash-alert-bundle",
     "license": "MIT",
     "type": "symfony-bundle",
-    "description": "AlertNotificationBundle provides a simplified way to handle (add/display) Symfony flash messages",
+    "description": "FlashAlertBundle provides a simplified way to handle (add/display) Symfony flash messages.",
     "keywords": [
         "alert",
         "notification",
@@ -19,9 +19,9 @@
     "require": {
         "php": ">=5.3.3"
     },
-    "target-dir": "Ras/Bundle/AlertNotificationBundle/",
+    "target-dir": "Ras/Bundle/FlashAlertBundle/",
     "autoload": {
-        "psr-0": { "Ras\\Bundle\\AlertNotificationBundle": "" }
+        "psr-0": { "Ras\\Bundle\\FlashAlertBundle": "" }
     },
     "minimum-stability": "dev"
 }

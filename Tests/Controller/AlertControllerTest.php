@@ -9,10 +9,10 @@
  * Copyright (c) 2014, The MIT License (MIT)
  */
 
-namespace Ras\Bundle\AlertNotificationBundle\Tests\Controller;
+namespace Ras\Bundle\FlashAlertBundle\Tests\Controller;
 
 
-use Ras\Bundle\AlertNotificationBundle\Service\AlertReportingService;
+use Ras\Bundle\FlashAlertBundle\Service\AlertReportingService;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -21,7 +21,7 @@ class AlertControllerTest extends WebTestCase
 
     /**
      * @test
-     * @covers \Ras\Bundle\AlertNotificationBundle\Controller\AlertController::displayAlertsAction
+     * @covers \Ras\Bundle\FlashAlertBundle\Controller\AlertController::displayAlertsAction
      */
     public function testDisplayAlerts()
     {

@@ -1,12 +1,12 @@
-AlertNotificationsBundle
+FlashAlertBundle
 ========================
-AlertNotificationBundle is an open source Bundle which simplifies displaying alert notifications (flash messages) such as success, error, info and warning
+FlashAlertBundle is an open source Bundle which simplifies displaying flash alerts (notifications) such as success, error, info and warning
 
 [![Build Status](https://scrutinizer-ci.com/g/rasanga/AlertNotificationBundle/badges/build.png?b=master)](https://scrutinizer-ci.com/g/rasanga/AlertNotificationBundle/build-status/master)
 
 Installation
 ============
-### Step 1: Download the AlertNotificationBundle
+### Step 1: Download the FlashAlertBundle
 ***Using Composer***
 Add the following to the "require" section of your `composer.json` file:
 
@@ -21,7 +21,7 @@ And update your dependencies
 ***Using submodules***
 Execute the following command on your project root:
 ``` bash
-$ git submodule add git@github.com:rasanga/AlertNotificationBundle.git vendor/bundles/Ras/AlertNotificationBundle
+$ git submodule add git@github.com:rasanga/FlashAlertBundle.git vendor/bundles/Ras/AlertNotificationBundle
 $ git submodule update --init
 ```
 
@@ -43,7 +43,7 @@ public function registerBundles()
 {
     $bundles = array(
         ...
-        new Ras\Bundle\AlertNotificationBundle\RasAlertNotificationBundle(),
+        new Ras\Bundle\FlashAlertBundle\RasFlashAlertBundle(),
         ...
     );
 ...
@@ -54,7 +54,7 @@ public function registerBundles()
 Add the following to the `config.(yml,xml)` file:
 ```
 assetic:
-    bundles:        [RasAlertNotificationBundle]
+    bundles:        [RasFlashAlertBundle]
 ```
 
 Usage
@@ -76,10 +76,10 @@ Add the following PHP code to report an alert message:
 ### Display alert notifications
 Add the following twig code where you want to display alert messages:
 ```
-    {{ render(controller('RasAlertNotificationBundle:Alert:displayAlerts')) }}
+    {{ render(controller('RasFlashAlertBundle:Alert:displayAlerts')) }}
 ```
 **Note:** The parent twig template would be the best place for displaying alert notifications
 
 LICENSE
 =======
-AlertNotificationBundle is licensed under the MIT Open Source license.
+FlashAlertBundle is licensed under the MIT Open Source license.

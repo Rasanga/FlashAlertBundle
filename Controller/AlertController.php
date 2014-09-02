@@ -9,7 +9,7 @@
  * Copyright (c) 2014, The MIT License (MIT)
  */
 
-namespace Ras\Bundle\AlertNotificationBundle\Controller;
+namespace Ras\Bundle\FlashAlertBundle\Controller;
 
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -20,7 +20,7 @@ class AlertController extends Controller
     public function displayAlertsAction()
     {
         return $this->render(
-            'RasAlertNotificationBundle:Alert:alerts.html.twig',
+            'RasFlashAlertBundle:Alert:alerts.html.twig',
             array(
                 'alertNotifications'    => $this->getAlertPublishingService()->getAlerts()
             )
@@ -28,7 +28,7 @@ class AlertController extends Controller
     }
 
     /**
-     * @return \Ras\Bundle\AlertNotificationBundle\Service\AlertPublishingService
+     * @return \Ras\Bundle\FlashAlertBundle\Service\AlertPublishingService
      *
      */
     protected function getAlertPublishingService()

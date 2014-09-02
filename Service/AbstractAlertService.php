@@ -9,7 +9,7 @@
  * Copyright (c) 2014, The MIT License (MIT)
  */
 
-namespace Ras\Bundle\AlertNotificationBundle\Service;
+namespace Ras\Bundle\FlashAlertBundle\Service;
 
 
 use Symfony\Component\HttpFoundation\Session\Session;
