@@ -1,7 +1,7 @@
 <?php
 /**
- * RasAlertNotificationBundle.php
- * Definition of class RasAlertNotificationBundle
+ * RasFlashAlertBundle.php
+ * Definition of class RasFlashAlertBundle
  *
  * Created 28/08/14 23:55
  *
@@ -9,10 +9,10 @@
  * Copyright (c) 2014, The MIT License (MIT)
  */
 
-namespace Ras\Bundle\AlertNotificationBundle;
+namespace Ras\Bundle\FlashAlertBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class RasAlertNotificationBundle extends Bundle
+class RasFlashAlertBundle extends Bundle
 {
 }

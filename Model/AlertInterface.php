@@ -1,7 +1,7 @@
 <?php
 /**
- * AlertNotificationInterface.php
- * Definition of class AlertNotificationInterface
+ * AlertInterface.php
+ * Definition of class AlertInterface
  *
  * Created 29/08/14 00:04
  *
@@ -9,10 +9,10 @@
  * Copyright (c) 2014, The MIT License (MIT)
  */
 
-namespace Ras\Bundle\AlertNotificationBundle\Model;
+namespace Ras\Bundle\FlashAlertBundle\Model;
 
 
-interface AlertNotificationInterface
+interface AlertInterface
 {
 
     /**

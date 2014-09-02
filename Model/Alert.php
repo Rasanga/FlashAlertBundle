@@ -1,7 +1,7 @@
 <?php
 /**
- * AlertNotification.php
- * Definition of class AlertNotification
+ * Alert.php
+ * Definition of class Alert
  *
  * Created 29/08/14 00:08
  *
@@ -9,10 +9,10 @@
  * Copyright (c) 2014, The MIT License (MIT)
  */
 
-namespace Ras\Bundle\AlertNotificationBundle\Model;
+namespace Ras\Bundle\FlashAlertBundle\Model;
 
 
-class AlertNotification implements AlertNotificationInterface
+class Alert implements AlertNotificationInterface
 {
 
     /**
