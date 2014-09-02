@@ -29,7 +29,7 @@ class AlertPublishingService extends AbstractAlertService
 
 
     /**
-     * Gets allowed alert notification types
+     * Gets allowed alert types
      *
      * @return array
      */
@@ -44,7 +44,7 @@ class AlertPublishingService extends AbstractAlertService
     }
 
     /**
-     * Gets alert notification from session flash bag
+     * Gets alerts from session flash bag
      *
      * @return Alert[]
      */
@@ -64,7 +64,7 @@ class AlertPublishingService extends AbstractAlertService
     }
 
     /**
-     * Creates alert messages objects for a type
+     * Creates alert objects for a type
      *
      * @param string $type
      * @param array $messages

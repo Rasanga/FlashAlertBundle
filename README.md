@@ -1,8 +1,9 @@
 FlashAlertBundle
 ========================
-FlashAlertBundle is an open source Bundle which simplifies displaying flash alerts (notifications) such as success, error, info and warning
+FlashAlertBundle is an open source Bundle which simplifies displaying flash alerts such as success, error, info and warning
 
-[![Build Status](https://scrutinizer-ci.com/g/rasanga/AlertNotificationBundle/badges/build.png?b=master)](https://scrutinizer-ci.com/g/rasanga/AlertNotificationBundle/build-status/master)
+[![Build Status](https://scrutinizer-ci.com/g/rasanga/FlashAlertBundle/badges/build.png?b=master)](https://scrutinizer-ci.com/g/rasanga/FlashAlertBundle/build-status/master)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/rasanga/FlashAlertBundle/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/rasanga/FlashAlertBundle/?branch=master)
 
 Installation
 ============
@@ -11,7 +12,7 @@ Installation
 Add the following to the "require" section of your `composer.json` file:
 
 ```
-    "ras/alert-notification-bundle": "dev-master"
+    "ras/flash-alert-bundle": "dev-master"
 ```
 And update your dependencies
 ```
@@ -21,7 +22,7 @@ And update your dependencies
 ***Using submodules***
 Execute the following command on your project root:
 ``` bash
-$ git submodule add git@github.com:rasanga/FlashAlertBundle.git vendor/bundles/Ras/AlertNotificationBundle
+$ git submodule add git@github.com:rasanga/FlashAlertBundle.git vendor/bundles/Ras/FlashAlertBundle
 $ git submodule update --init
 ```
 
@@ -59,7 +60,7 @@ assetic:
 
 Usage
 =====
-### Add alert notifications
+### Add flash alerts
 Add the following PHP code to report an alert message:
 ```
     $this->get('Ras.Alert.AlertReportingService')->addError("Access denied");
@@ -73,12 +74,12 @@ Add the following PHP code to report an alert message:
     addWarning()
 ```
 
-### Display alert notifications
+### Display flash alerts
 Add the following twig code where you want to display alert messages:
 ```
     {{ render(controller('RasFlashAlertBundle:Alert:displayAlerts')) }}
 ```
-**Note:** The parent twig template would be the best place for displaying alert notifications
+**Note:** The parent twig template would be the best place for displaying flash alerts
 
 LICENSE
 =======

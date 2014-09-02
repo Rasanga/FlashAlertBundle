@@ -22,7 +22,7 @@ class AlertController extends Controller
         return $this->render(
             'RasFlashAlertBundle:Alert:alerts.html.twig',
             array(
-                'alertNotifications'    => $this->getAlertPublishingService()->getAlerts()
+                'flashAlerts'    => $this->getAlertPublishingService()->getAlerts()
             )
         );
     }

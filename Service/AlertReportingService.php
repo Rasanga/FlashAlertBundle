@@ -28,7 +28,7 @@ class AlertReportingService extends AbstractAlertService
     }
 
     /**
-     * Adds alert notification to session flash bag
+     * Adds alert to session flash bag
      *
      * @param AlertInterface $alert
      */
@@ -38,7 +38,7 @@ class AlertReportingService extends AbstractAlertService
     }
 
     /**
-     * Adds error alert notification to session flash bag
+     * Adds error alert to session flash bag
      *
      * @param string $message
      */
@@ -50,7 +50,7 @@ class AlertReportingService extends AbstractAlertService
     }
 
     /**
-     * Adds success alert notification to session flash bag
+     * Adds success alert to session flash bag
      *
      * @param string $message
      */
@@ -62,7 +62,7 @@ class AlertReportingService extends AbstractAlertService
     }
 
     /**
-     * Adds information alert notification to session flash bag
+     * Adds information alert to session flash bag
      *
      * @param string $message
      */
@@ -74,7 +74,7 @@ class AlertReportingService extends AbstractAlertService
     }
 
     /**
-     * Adds warning (block) alert notification to session flash bag
+     * Adds warning (block) alert to session flash bag
      *
      * @param string $message
      */

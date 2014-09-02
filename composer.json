@@ -5,10 +5,12 @@
     "description": "FlashAlertBundle provides a simplified way to handle (add/display) Symfony flash messages.",
     "keywords": [
         "alert",
+        "flash",
+        "message",
+        "feedback",
         "notification",
         "symfony",
-        "Bundle",
-        "feedback"
+        "Bundle"
     ],
     "authors": [
         {

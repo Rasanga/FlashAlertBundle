@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="{{ asset_url }}" />
     {% endstylesheets %}
 
-    {% for alert in alertNotifications %}
+    {% for alert in flashAlerts %}
         <div class="alert alert-{{ alert.type }}">
             <button type="button" class="close" data-dismiss="alert">&times;</button>
             {{ alert.message | raw  }}
