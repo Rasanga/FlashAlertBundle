@@ -81,7 +81,7 @@ class AlertReportingService extends AbstractAlertService
     public function addWarning($message)
     {
         $this->addAlert(
-            new Alert(AlertInterface::BLOCK_ALERT, $message)
+            new Alert(AlertInterface::WARNING_ALERT, $message)
         );
     }
 

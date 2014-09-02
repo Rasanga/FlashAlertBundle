@@ -36,10 +36,10 @@ class AlertPublishingService extends AbstractAlertService
     public static function getAlertTypes()
     {
         return array(
-            AlertInterface::ERROR_ALERT,
             AlertInterface::SUCCESS_ALERT,
-            AlertInterface::INFO_ALERT,
-            AlertInterface::BLOCK_ALERT
+            AlertInterface::ERROR_ALERT,
+            AlertInterface::WARNING_ALERT,
+            AlertInterface::INFO_ALERT
         );
     }
 
@@ -56,7 +56,7 @@ class AlertPublishingService extends AbstractAlertService
             $messages = $this->session->getFlashBag()->get($type);
 
             if (!empty($messages)) {
-                $alerts += $this->createAlertsForType($type, $messages);
+                $alerts = array_merge($alerts, $this->createAlertsForType($type, $messages)) ;
             }
         }
 

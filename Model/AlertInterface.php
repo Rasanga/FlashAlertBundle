@@ -15,10 +15,6 @@ namespace Ras\Bundle\FlashAlertBundle\Model;
 interface AlertInterface
 {
 
-    /**
-     * @var string
-     */
-    const ERROR_ALERT     = "error";
 
     /**
      * @var string
@@ -28,12 +24,17 @@ interface AlertInterface
     /**
      * @var string
      */
-    const INFO_ALERT      = "info";
+    const ERROR_ALERT     = "error";
 
     /**
      * @var string
      */
-    const BLOCK_ALERT     = "warning";
+    const WARNING_ALERT     = "warning";
+
+    /**
+     * @var string
+     */
+    const INFO_ALERT      = "info";
 
     /**
      * @return string
