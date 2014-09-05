@@ -7,14 +7,14 @@ FlashAlertBundle is an open source Bundle which simplifies displaying flash aler
 
 Table of Contents
 ========================
-1. Usage
-  1. Report flash alerts
-  2. Display flash alerts
-2. Installation
-  1. Download the FlashAlertBundle
-  2. Enable the bundle
-  3. Configure the bundle
-3. LICENSE
+1. [Usage](#usage)
+  1. [Report flash alerts](#report-flash-alerts)
+  2. [Display flash alerts](#display-flash-alerts)
+2. [Installation](#installation)
+  1. [Download the FlashAlertBundle](#step-1-download-the-flashalertbundle)
+  2. [Enable the bundle](#step-2-enable-the-bundle)
+  3. [Configure the bundle](#step-3-configure-the-bundle)
+3. [License](#license)
 
 Usage
 =====
