@@ -91,6 +91,6 @@ Add the following to your `autoload.php`:
 'Ras' => __DIR__.'/../vendor/bundles',
 ```
 
-License
+LICENSE
 =======
 FlashAlertBundle is licensed under the MIT Open Source license.
