@@ -28,8 +28,8 @@ Add the following PHP code to report an alert message:
 ```
     addSuccess()
     addError()
-    addInfo()
     addWarning()
+    addInfo()
 ```
 
 ### Display flash alerts
@@ -83,7 +83,7 @@ assetic:
     bundles:        [RasFlashAlertBundle]
 ```
 
-### Optional, if you are not using composer: Configure the Autoloader
+### Step Optional, if you are not using composer: Configure the Autoloader
 Add the following to your `autoload.php`:
 ```php
 <?php
@@ -91,6 +91,6 @@ Add the following to your `autoload.php`:
 'Ras' => __DIR__.'/../vendor/bundles',
 ```
 
-LICENSE
+License
 =======
 FlashAlertBundle is licensed under the MIT Open Source license.

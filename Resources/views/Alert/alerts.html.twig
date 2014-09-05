@@ -18,15 +18,29 @@
 <script type="text/javascript">
     // Pure JavaScript implementation for flash alerts
     window.onload = function () {
-        var elements = document.getElementById("ras-flash-alerts")
+        var elems = document.getElementById("ras-flash-alerts")
                 .getElementsByTagName('button');
 
-        for (var i in elements) {
-            if ((" " + elements[i].className + " ").indexOf("close") > -1) {
-                elements[i].onclick = function () {
-                    this.parentNode.style.display = 'none';
+        for (var i in elems) {
+            if ((" " + elems[i].className + " ").indexOf("close") > -1) {
+                elems[i].onclick = function () {
+                    fadeout(this.parentNode);
                 };
             }
         }
     }
+
+    var fadeout = function(elem) {
+        var o = 1;
+        var timer = setInterval(function () {
+            if (o <= 0.0) {
+                elem.style.display = 'none';
+                clearInterval(timer);
+
+            }
+            elem.style.opacity = o;
+            elem.style.filter = 'alpha(opacity=' + o * 100 + ")";
+            o -= 0.1;
+        }, 25);
+    };
 </script>
