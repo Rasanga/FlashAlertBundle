@@ -5,6 +5,40 @@ FlashAlertBundle is an open source Bundle which simplifies displaying flash aler
 [![Build Status](https://scrutinizer-ci.com/g/rasanga/FlashAlertBundle/badges/build.png?b=master)](https://scrutinizer-ci.com/g/rasanga/FlashAlertBundle/build-status/master)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/rasanga/FlashAlertBundle/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/rasanga/FlashAlertBundle/?branch=master)
 
+Table of Contents
+========================
+1. Usage
+  1. Report flash alerts
+  2. Display flash alerts
+2. Installation
+  1. Download the FlashAlertBundle
+  2. Enable the bundle
+  3. Configure the bundle
+3. LICENSE
+
+Usage
+=====
+### Report flash alerts
+Add the following PHP code to report an alert message:
+```
+    $this->get('Ras.Alert.AlertReportingService')->addError("Access denied");
+```
+**Note:** You can choose one of the following functions to call from
+`$this->get('Ras.Alert.AlertReportingService')`
+```
+    addSuccess()
+    addError()
+    addInfo()
+    addWarning()
+```
+
+### Display flash alerts
+Add the following twig code where you want to display alert messages:
+```
+    {{ render(controller('RasFlashAlertBundle:Alert:displayAlerts')) }}
+```
+**Note:** The parent twig template would be the best place for displaying flash alerts
+
 Installation
 ============
 ### Step 1: Download the FlashAlertBundle
@@ -26,16 +60,7 @@ $ git submodule add git@github.com:rasanga/FlashAlertBundle.git vendor/bundles/R
 $ git submodule update --init
 ```
 
-### Step 2: Configure the Autoloader
-If you are not using composer.
-Add the following to your `autoload.php`:
-```php
-<?php
-...
-'Ras' => __DIR__.'/../vendor/bundles',
-```
-
-### Step 3: Enable the bundle
+### Step 2: Enable the bundle
 Registers the bundle in your `app/AppKernel.php`:
 ```php
 <?php
@@ -50,7 +75,7 @@ public function registerBundles()
 ...
 ```
 
-### Step 4: Configure the bundle
+### Step 3: Configure the bundle
 ***Assetic Configuration***
 Add the following to the `config.(yml,xml)` file:
 ```
@@ -58,28 +83,13 @@ assetic:
     bundles:        [RasFlashAlertBundle]
 ```
 
-Usage
-=====
-### Add flash alerts
-Add the following PHP code to report an alert message:
+### Optional, if you are not using composer: Configure the Autoloader
+Add the following to your `autoload.php`:
+```php
+<?php
+...
+'Ras' => __DIR__.'/../vendor/bundles',
 ```
-    $this->get('Ras.Alert.AlertReportingService')->addError("Access denied");
-```
-**Note:** You can choose one of the following functions to call from 
-`$this->get('Ras.Alert.AlertReportingService')`
-```
-    addSuccess()
-    addError()
-    addInfo()
-    addWarning()
-```
-
-### Display flash alerts
-Add the following twig code where you want to display alert messages:
-```
-    {{ render(controller('RasFlashAlertBundle:Alert:displayAlerts')) }}
-```
-**Note:** The parent twig template would be the best place for displaying flash alerts
 
 LICENSE
 =======
