@@ -39,14 +39,14 @@ Add the following twig code where you want to display alert messages:
 ```
 **Note 1:** The parent twig template would be the best place for displaying flash alerts
 
-### Display flash alerts with custom styles
-The bundle defines alert styles by default.
-However, you can turn off default styles by setting isAddStyles variable to false as shown in below.
+#### Display flash alerts with custom styles
+The bundle defines alert styles by default. However, you can turn off default styles by setting
+isAddStyles variable to false as shown in below.
 ```
     {{ render(controller('RasFlashAlertBundle:Alert:displayAlerts', { 'isAddStyles': false})) }}
 ```
 
-Then you can <b>define your own styles</b> to match alert classes such as `alert`, `alert-dismissable`,
+Then you can <b>define your own styles</b> to match alert classes such as `alert`,
 `alert-close`, `alert-success`, `alert-error`, `alert-warning` and `alert-info`
 
 Installation
