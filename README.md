@@ -5,7 +5,7 @@ FlashAlertBundle is an open source Bundle which simplifies displaying flash aler
 [![Build Status](https://scrutinizer-ci.com/g/rasanga/FlashAlertBundle/badges/build.png?b=master)](https://scrutinizer-ci.com/g/rasanga/FlashAlertBundle/build-status/master)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/rasanga/FlashAlertBundle/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/rasanga/FlashAlertBundle/?branch=master)
 
-![Demo screenshot](https://s3.amazonaws.com/fvd-data/notes/245000/1410604710-Ex6FfZ/screen.png "Demo screenshot")
+![Demo screenshot](https://s3.amazonaws.com/fvd-data/notes/258675/1410605457-Kse8z1/screen.png "Demo screenshot")
 
 Table of Contents
 ========================
