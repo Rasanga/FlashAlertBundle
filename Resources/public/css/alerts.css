@@ -20,7 +20,7 @@
 .alert-dismissable {
     padding-right: 35px;
 }
-.alert-dismissable .close {
+.alert-dismissable .alert-close {
     position: relative;
     top: -2px;
     right: -21px;
@@ -90,7 +90,7 @@
     filter: alpha(opacity=40);
     opacity: .4;
 }
-.close {
+.alert-close {
     float: right;
     font-size: 21px;
     font-weight: bold;
@@ -100,15 +100,15 @@
     filter: alpha(opacity=20);
     opacity: .2;
 }
-.close:hover,
-.close:focus {
+.alert-close:hover,
+.alert-close:focus {
     color: #000;
     text-decoration: none;
     cursor: pointer;
     filter: alpha(opacity=50);
     opacity: .5;
 }
-button.close {
+button.alert-close {
     -webkit-appearance: none;
     padding: 0;
     cursor: pointer;

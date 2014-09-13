@@ -17,12 +17,13 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 class AlertController extends Controller
 {
 
-    public function displayAlertsAction()
+    public function displayAlertsAction($isAddStyles = true)
     {
         return $this->render(
             'RasFlashAlertBundle:Alert:alerts.html.twig',
             array(
-                'flashAlerts'    => $this->getAlertPublishingService()->getAlerts()
+                'flashAlerts'   =>  $this->getAlertPublishingService()->getAlerts(),
+                'isAddStyles'     =>  $isAddStyles
             )
         );
     }
