@@ -19,7 +19,8 @@
         }
     ],
     "require": {
-        "php": ">=5.3.3"
+        "php": ">=5.3.3",
+        "symfony/symfony": ">=2.1"
     },
     "target-dir": "Ras/Bundle/FlashAlertBundle/",
     "autoload": {
