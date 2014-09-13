@@ -18,7 +18,7 @@ Table of Contents
 
 Usage
 =====
-### Report flash alerts
+## Report flash alerts
 Add the following PHP code to report an alert message:
 ```
     $this->get('Ras.Alert.AlertReportingService')->addError("Access denied");
@@ -32,19 +32,28 @@ Add the following PHP code to report an alert message:
     addInfo()
 ```
 
-### Display flash alerts
+## Display flash alerts
 Add the following twig code where you want to display alert messages:
 ```
     {{ render(controller('RasFlashAlertBundle:Alert:displayAlerts')) }}
 ```
-**Note:** The parent twig template would be the best place for displaying flash alerts
+**Note 1:** The parent twig template would be the best place for displaying flash alerts
+
+### Display flash alerts with custom styles
+The bundle defines alert styles by default.
+However, you can turn off default styles by setting isAddStyles variable to false as shown in below.
+```
+    {{ render(controller('RasFlashAlertBundle:Alert:displayAlerts', { 'isAddStyles': false})) }}
+```
+
+Then you can <b>define your own styles</b> to match alert classes such as `alert`, `alert-dismissable`,
+`alert-close`, `alert-success`, `alert-error`, `alert-warning` and `alert-info`
 
 Installation
 ============
 ### Step 1: Download the FlashAlertBundle
 ***Using Composer***
 Add the following to the "require" section of your `composer.json` file:
-
 ```
     "ras/flash-alert-bundle": "dev-master"
 ```
@@ -73,14 +82,6 @@ public function registerBundles()
         ...
     );
 ...
-```
-
-### Step 3: Configure the bundle
-***Assetic Configuration***
-Add the following to the `config.(yml,xml)` file:
-```
-assetic:
-    bundles:        [RasFlashAlertBundle]
 ```
 
 ### Step Optional, if you are not using composer: Configure the Autoloader
