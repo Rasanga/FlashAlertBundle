@@ -44,7 +44,9 @@ Add the following twig code where you want to display alert messages:
 The bundle defines alert styles by default. However, you can turn off default styles by setting
 isAddStyles variable to false as shown in below.
 ```
-    {{ render(controller('RasFlashAlertBundle:Alert:displayAlerts', { 'isAddStyles': false})) }}
+    {{ render(controller('RasFlashAlertBundle:Alert:displayAlerts', { 
+        'isAddStyles': false
+    })) }}
 ```
 
 Then you can <b>define your own styles</b> to match alert classes such as `alert`,
