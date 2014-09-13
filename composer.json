@@ -2,7 +2,7 @@
     "name": "ras/flash-alert-bundle",
     "license": "MIT",
     "type": "symfony-bundle",
-    "description": "FlashAlertBundle provides a simplified way to handle (add/display) Symfony flash messages.",
+    "description": "FlashAlertBundle provides a simplified way to handle (add/display) Symfony flash messages. Implemented with pure JavaScript and PHP",
     "keywords": [
         "alert",
         "flash",
