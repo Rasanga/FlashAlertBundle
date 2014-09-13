@@ -15,7 +15,6 @@ Table of Contents
 2. [Installation](#installation)
   1. [Download the FlashAlertBundle](#step-1-download-the-flashalertbundle)
   2. [Enable the bundle](#step-2-enable-the-bundle)
-  3. [Configure the bundle](#step-3-configure-the-bundle)
 3. [License](#license)
 
 Usage
