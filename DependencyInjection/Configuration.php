@@ -12,6 +12,10 @@ use Symfony\Component\Config\Definition\ConfigurationInterface;
  */
 class Configuration implements ConfigurationInterface
 {
+    const DEFAULT_TEMPLATE = 'RasFlashAlertBundle::flashAlerts.html.twig';
+
+    const DEFAULT_IS_ADD_STYLES = true;
+
     /**
      * {@inheritDoc}
      */
@@ -20,9 +24,17 @@ class Configuration implements ConfigurationInterface
         $treeBuilder = new TreeBuilder();
         $rootNode = $treeBuilder->root('ras_flash_alert');
 
-        // Here you should define the parameters that are allowed to
-        // configure your bundle. See the documentation linked above for
-        // more information on that topic.
+        $rootNode
+            ->children()
+                ->scalarNode('template')
+                    ->defaultValue(self::DEFAULT_TEMPLATE)
+                    ->end()
+
+                ->scalarNode('isAddStyles')
+                    ->defaultValue(self::DEFAULT_IS_ADD_STYLES)
+                    ->end()
+            ->end()
+        ;
 
         return $treeBuilder;
     }

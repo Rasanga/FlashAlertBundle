@@ -64,7 +64,7 @@ class FlashAlertsHelper extends Helper
         $options = $this->resolveOptions($options);
 
         return $this->templating->render(
-            'RasFlashAlertBundle::flashAlerts.html.twig',
+            $options['template'],
             $options
         );
     }

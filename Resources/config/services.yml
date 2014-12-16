@@ -21,6 +21,6 @@ services:
         arguments:
             templating: @templating
             alertPublisher: @ras_flash_alert.alert_publisher
-            options: []
+            options: %ras_flash_alerts.options%
         tags:
             - { name: templating.helper, alias: flashAlerts }
