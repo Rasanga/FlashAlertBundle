@@ -1,7 +1,7 @@
 <?php
 /**
- * AlertReportingService.php
- * Definition of class AlertReportingService
+ * AlertReporter.php
+ * Definition of class AlertReporter
  *
  * Created 28/08/14 23:58
  *
@@ -9,32 +9,25 @@
  * Copyright (c) 2014, The MIT License (MIT)
  */
 
-namespace Ras\Bundle\FlashAlertBundle\Service;
+namespace Ras\Bundle\FlashAlertBundle\Model;
 
 
-use Ras\Bundle\FlashAlertBundle\Model\Alert;
-use Ras\Bundle\FlashAlertBundle\Model\AlertInterface;
 use Symfony\Component\HttpFoundation\Session\Session;
 
-class AlertReportingService extends AbstractAlertService
+class AlertReporter
 {
+    /**
+     * @var Session
+     */
+    private $session;
+
 
     /**
      * @param Session $session
      */
     public function __construct(Session $session)
     {
-        parent::__construct($session);
-    }
-
-    /**
-     * Adds alert to session flash bag
-     *
-     * @param AlertInterface $alert
-     */
-    protected function addAlert(AlertInterface $alert)
-    {
-        $this->session->getFlashBag()->add($alert->getType(), $alert->getMessage());
+        $this->session = $session;
     }
 
     /**
@@ -85,4 +78,13 @@ class AlertReportingService extends AbstractAlertService
         );
     }
 
+    /**
+     * Adds alert to session flash bag
+     *
+     * @param AlertInterface $alert
+     */
+    private function addAlert(AlertInterface $alert)
+    {
+        $this->session->getFlashBag()->add($alert->getType(), $alert->getMessage());
+    }
 } 

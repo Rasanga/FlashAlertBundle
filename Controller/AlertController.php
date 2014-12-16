@@ -20,7 +20,7 @@ class AlertController extends Controller
     public function displayAlertsAction($isAddStyles = true)
     {
         return $this->render(
-            'RasFlashAlertBundle:Alert:alerts.html.twig',
+            'RasFlashAlertBundle::flashAlerts.html.twig',
             array(
                 'flashAlerts'   =>  $this->getAlertPublishingService()->getAlerts(),
                 'isAddStyles'     =>  $isAddStyles
@@ -29,12 +29,12 @@ class AlertController extends Controller
     }
 
     /**
-     * @return \Ras\Bundle\FlashAlertBundle\Service\AlertPublishingService
+     * @return \Ras\Bundle\FlashAlertBundle\Model\AlertPublisher
      *
      */
     protected function getAlertPublishingService()
     {
-        return $this->get('Ras.Alert.AlertPublishingService');
+        return $this->get('ras_flash_alert.alert_publisher');
     }
 
 } 

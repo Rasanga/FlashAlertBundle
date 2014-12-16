@@ -1,7 +1,7 @@
 <?php
 /**
- * AlertPublishingService.php
- * Definition of class AlertPublishingService
+ * AlertPublisher.php
+ * Definition of class AlertPublisher
  *
  * Created 31/08/14 07:19
  *
@@ -9,24 +9,26 @@
  * Copyright (c) 2014, The MIT License (MIT)
  */
 
-namespace Ras\Bundle\FlashAlertBundle\Service;
+namespace Ras\Bundle\FlashAlertBundle\Model;
 
 
-use Ras\Bundle\FlashAlertBundle\Model\Alert;
-use Ras\Bundle\FlashAlertBundle\Model\AlertInterface;
 use Symfony\Component\HttpFoundation\Session\Session;
 
-class AlertPublishingService extends AbstractAlertService
+class AlertPublisher
 {
+    /**
+     * @var Session
+     */
+    private $session;
+
 
     /**
      * @param Session $session
      */
     public function __construct(Session $session)
     {
-        parent::__construct($session);
+        $this->session = $session;
     }
-
 
     /**
      * Gets allowed alert types
@@ -70,7 +72,7 @@ class AlertPublishingService extends AbstractAlertService
      * @param array $messages
      * @return Alert[]
      */
-    protected function createAlertsForType($type, array $messages)
+    private function createAlertsForType($type, array $messages)
     {
         $alerts = array();
 
