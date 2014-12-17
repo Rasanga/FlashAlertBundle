@@ -29,12 +29,12 @@ class AlertController extends Controller
     }
 
     /**
-     * @return \Ras\Bundle\FlashAlertBundle\Model\AlertPublisher
+     * @return \Ras\Bundle\FlashAlertBundle\Model\AlertManager
      *
      */
     protected function getAlertPublishingService()
     {
-        return $this->get('ras_flash_alert.alert_publisher');
+        return $this->get('ras_flash_alert.alert_manager');
     }
 
 } 

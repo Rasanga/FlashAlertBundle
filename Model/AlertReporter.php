@@ -12,22 +12,20 @@
 namespace Ras\Bundle\FlashAlertBundle\Model;
 
 
-use Symfony\Component\HttpFoundation\Session\Session;
-
 class AlertReporter
 {
     /**
-     * @var Session
+     * @var AlertManagerInterface
      */
-    private $session;
+    private $alertManager;
 
 
     /**
-     * @param Session $session
+     * @param AlertManagerInterface $alertManager
      */
-    public function __construct(Session $session)
+    public function __construct(AlertManagerInterface $alertManager)
     {
-        $this->session = $session;
+        $this->alertManager = $alertManager;
     }
 
     /**
@@ -37,7 +35,7 @@ class AlertReporter
      */
     public function addError($message)
     {
-        $this->addAlert(
+        $this->alertManager->addAlert(
             new Alert(AlertInterface::ERROR_ALERT, $message)
         );
     }
@@ -49,7 +47,7 @@ class AlertReporter
      */
     public function addSuccess($message)
     {
-        $this->addAlert(
+        $this->alertManager->addAlert(
             new Alert(AlertInterface::SUCCESS_ALERT, $message)
         );
     }
@@ -61,7 +59,7 @@ class AlertReporter
      */
     public function addInfo($message)
     {
-        $this->addAlert(
+        $this->alertManager->addAlert(
             new Alert(AlertInterface::INFO_ALERT, $message)
         );
     }
@@ -73,18 +71,8 @@ class AlertReporter
      */
     public function addWarning($message)
     {
-        $this->addAlert(
+        $this->alertManager->addAlert(
             new Alert(AlertInterface::WARNING_ALERT, $message)
         );
-    }
-
-    /**
-     * Adds alert to session flash bag
-     *
-     * @param AlertInterface $alert
-     */
-    private function addAlert(AlertInterface $alert)
-    {
-        $this->session->getFlashBag()->add($alert->getType(), $alert->getMessage());
     }
 } 

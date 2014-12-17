@@ -12,75 +12,98 @@
 namespace Ras\Bundle\FlashAlertBundle\Model;
 
 
-use Symfony\Component\HttpFoundation\Session\Session;
-
-class AlertPublisher
+class AlertPublisher implements \Iterator, \ArrayAccess, \Countable
 {
     /**
-     * @var Session
+     * @var array
      */
-    private $session;
-
+    private $alerts;
 
     /**
-     * @param Session $session
+     * @param AlertManagerInterface $alertManager
      */
-    public function __construct(Session $session)
+    public function __construct(AlertManagerInterface $alertManager)
     {
-        $this->session = $session;
+        $this->alerts = $alertManager->getAlerts();
     }
 
     /**
-     * Gets allowed alert types
-     *
-     * @return array
+     * @inheritdoc
      */
-    public static function getAlertTypes()
+    public function current()
     {
-        return array(
-            AlertInterface::SUCCESS_ALERT,
-            AlertInterface::ERROR_ALERT,
-            AlertInterface::WARNING_ALERT,
-            AlertInterface::INFO_ALERT
-        );
+        return current($this->alerts);
     }
 
     /**
-     * Gets alerts from session flash bag
-     *
-     * @return Alert[]
+     * @inheritdoc
      */
-    public function getAlerts()
+    public function next()
     {
-        $alerts = array();
-
-        foreach (self::getAlertTypes() as $type) {
-            $messages = $this->session->getFlashBag()->get($type);
-
-            if (!empty($messages)) {
-                $alerts = array_merge($alerts, $this->createAlertsForType($type, $messages)) ;
-            }
-        }
-
-        return $alerts;
+        next($this->alerts);
     }
 
     /**
-     * Creates alert objects for a type
-     *
-     * @param string $type
-     * @param array $messages
-     * @return Alert[]
+     * @inheritdoc
      */
-    private function createAlertsForType($type, array $messages)
+    public function key()
     {
-        $alerts = array();
-
-        foreach ($messages as $msg) {
-            $alerts[] = new Alert($type, $msg);
-        }
-
-        return $alerts;
+        return key($this->alerts);
     }
 
-} 
+    /**
+     * @inheritdoc
+     */
+    public function valid()
+    {
+        return key($this->alerts) !== null;
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function rewind()
+    {
+        return reset($this->alerts);
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function offsetExists($offset)
+    {
+        return isset($this->alerts[$offset]);
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function offsetGet($offset)
+    {
+        return isset($this->alerts[$offset]) ? $this->alerts[$offset] : null;
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function offsetSet($offset, $value)
+    {
+        $this->$this->alerts[$offset] = $value;
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function offsetUnset($offset)
+    {
+        unset($this->alerts[$offset]);
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function count()
+    {
+        return count($this->alerts);
+    }
+}

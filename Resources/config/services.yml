@@ -1,22 +1,27 @@
 services:
+    ras_flash_alert.alert_manager:
+        class: Ras\Bundle\FlashAlertBundle\Model\AlertManager
+        arguments:
+            session: @Session
+
     ras_flash_alert.alert_reporter:
         class: Ras\Bundle\FlashAlertBundle\Model\AlertReporter
         arguments:
-            session: @Session
+            alertManager: @ras_flash_alert.alert_manager
 
     ras_flash_alert.alert_publisher:
         class: Ras\Bundle\FlashAlertBundle\Model\AlertPublisher
         arguments:
-            session: @Session
+            alertManager: @ras_flash_alert.alert_manager
 
-    ras_flash_alert.twig.alert_reporter_extension:
+    ras_flash_alert.twig.flash_alerts_extension:
         class: Ras\Bundle\FlashAlertBundle\Twig\FlashAlertsExtension
         arguments:
             container: @service_container
         tags:
             - { name: twig.extension }
 
-    ras_flash_alert.templating.alert_reporter_helper:
+    ras_flash_alert.templating.flash_alerts_helper:
         class: Ras\Bundle\FlashAlertBundle\Templating\Helper\FlashAlertsHelper
         arguments:
             templating: @templating

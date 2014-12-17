@@ -21,10 +21,10 @@ class FlashAlertsExtension extends \Twig_Extension
      */
     private $container;
 
-//    /**
-//     * @var \Ras\Bundle\FlashAlertBundle\Model\AlertPublisher
-//     */
-//    private $alertPublisher;
+    /**
+     * @var \Ras\Bundle\FlashAlertBundle\Model\AlertPublisher
+     */
+    private $alertPublisher;
 
     /**
      * @param ContainerInterface $container
@@ -32,7 +32,7 @@ class FlashAlertsExtension extends \Twig_Extension
     public function __construct(ContainerInterface $container)
     {
         $this->container = $container;
-//        $this->alertPublisher = $container->get('ras_flash_alert.alert_publisher');
+        $this->alertPublisher = $container->get('ras_flash_alert.alert_publisher');
     }
 
     /**
@@ -49,10 +49,21 @@ class FlashAlertsExtension extends \Twig_Extension
     public function getFunctions()
     {
         return array(
+            'get_flash_alerts' => new \Twig_Function_Method($this, 'getFlashAlerts', array(
+                'is_safe'   =>  array('html')
+            )),
             'render_flash_alerts' => new \Twig_Function_Method($this, 'renderFlashAlerts', array(
                 'is_safe'   =>  array('html')
             ))
         );
+    }
+
+    /**
+     * @return \Ras\Bundle\FlashAlertBundle\Model\AlertPublisher
+     */
+    public function getFlashAlerts()
+    {
+        return $this->alertPublisher;
     }
 
     /**
@@ -63,7 +74,7 @@ class FlashAlertsExtension extends \Twig_Extension
      */
     public function renderFlashAlerts(array $options = array())
     {
-        return $this->container->get('ras_flash_alert.templating.alert_reporter_helper')
-            ->flashAlerts($options);
+        return $this->container->get('ras_flash_alert.templating.flash_alerts_helper')
+            ->renderFlashAlerts($options);
     }
 }

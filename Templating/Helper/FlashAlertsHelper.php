@@ -59,7 +59,7 @@ class FlashAlertsHelper extends Helper
      * @param array $options
      * @return string A HTML string
      */
-    public function flashAlerts(array $options = array())
+    public function renderFlashAlerts(array $options = array())
     {
         $options = $this->resolveOptions($options);
 
@@ -78,7 +78,7 @@ class FlashAlertsHelper extends Helper
      */
     private function resolveOptions(array $options = array())
     {
-        $this->options['flashAlerts'] = $this->alertPublisher->getAlerts();
+        $this->options['flashAlerts'] = $this->alertPublisher;
 
         return array_merge($this->options, $options);
     }
