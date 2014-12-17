@@ -49,7 +49,7 @@ class FlashAlertsExtension extends \Twig_Extension
     public function getFunctions()
     {
         return array(
-            'get_flash_alerts' => new \Twig_Function_Method($this, 'getFlashAlerts', array(
+            'get_alert_publisher' => new \Twig_Function_Method($this, 'getAlertPublisher', array(
                 'is_safe'   =>  array('html')
             )),
             'render_flash_alerts' => new \Twig_Function_Method($this, 'renderFlashAlerts', array(
@@ -61,7 +61,7 @@ class FlashAlertsExtension extends \Twig_Extension
     /**
      * @return \Ras\Bundle\FlashAlertBundle\Model\AlertPublisher
      */
-    public function getFlashAlerts()
+    public function getAlertPublisher()
     {
         return $this->alertPublisher;
     }

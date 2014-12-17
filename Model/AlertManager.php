@@ -21,11 +21,6 @@ class AlertManager implements AlertManagerInterface
      */
     private $session;
 
-    /**
-     * @var array
-     */
-    private $alerts = array();
-
 
     /**
      * @param Session $session
@@ -48,15 +43,17 @@ class AlertManager implements AlertManagerInterface
      */
     public function getAlerts()
     {
+        $alerts = array();
+
         foreach (self::getAlertTypes() as $type) {
             $messages = $this->session->getFlashBag()->get($type);
 
             if (!empty($messages)) {
-                $this->alerts = array_merge($this->alerts, $this->createAlertsForType($type, $messages)) ;
+                $alerts = array_merge($alerts, $this->createAlertsForType($type, $messages)) ;
             }
         }
 
-        return $this->alerts;
+        return $alerts;
     }
 
     /**

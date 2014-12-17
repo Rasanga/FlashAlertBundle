@@ -12,7 +12,7 @@ use Symfony\Component\Config\Definition\ConfigurationInterface;
  */
 class Configuration implements ConfigurationInterface
 {
-    const DEFAULT_TEMPLATE = 'RasFlashAlertBundle::flashAlerts.html.twig';
+    const DEFAULT_TEMPLATE = 'RasFlashAlertBundle::layout.html.twig';
 
     const DEFAULT_IS_ADD_STYLES = true;
 
