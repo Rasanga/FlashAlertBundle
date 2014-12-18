@@ -1,4 +1,5 @@
 services:
+    # models
     ras_flash_alert.alert_manager:
         class: Ras\Bundle\FlashAlertBundle\Model\AlertManager
         arguments:
@@ -14,6 +15,7 @@ services:
         arguments:
             alertManager: @ras_flash_alert.alert_manager
 
+    # twig extensions
     ras_flash_alert.twig.flash_alerts_extension:
         class: Ras\Bundle\FlashAlertBundle\Twig\FlashAlertsExtension
         arguments:
@@ -21,6 +23,7 @@ services:
         tags:
             - { name: twig.extension }
 
+    # template helper
     ras_flash_alert.templating.flash_alerts_helper:
         class: Ras\Bundle\FlashAlertBundle\Templating\Helper\FlashAlertsHelper
         arguments:

@@ -12,6 +12,9 @@ use Symfony\Component\Config\Definition\ConfigurationInterface;
  */
 class Configuration implements ConfigurationInterface
 {
+    /**
+     * Default alert view template
+     */
     const DEFAULT_TEMPLATE = 'RasFlashAlertBundle::layout.html.twig';
 
     /**
@@ -29,6 +32,10 @@ class Configuration implements ConfigurationInterface
                     ->end()
 
                 ->booleanNode('isAddStyles')
+                    ->defaultTrue()
+                    ->end()
+
+                ->booleanNode('isAddJsAlertClose')
                     ->defaultTrue()
                     ->end()
             ->end()

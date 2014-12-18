@@ -21,10 +21,6 @@ class FlashAlertsExtension extends \Twig_Extension
      */
     private $container;
 
-    /**
-     * @var \Ras\Bundle\FlashAlertBundle\Model\AlertPublisher
-     */
-    private $alertPublisher;
 
     /**
      * @param ContainerInterface $container
@@ -32,7 +28,6 @@ class FlashAlertsExtension extends \Twig_Extension
     public function __construct(ContainerInterface $container)
     {
         $this->container = $container;
-        $this->alertPublisher = $container->get('ras_flash_alert.alert_publisher');
     }
 
     /**
@@ -63,7 +58,7 @@ class FlashAlertsExtension extends \Twig_Extension
      */
     public function getAlertPublisher()
     {
-        return $this->alertPublisher;
+        return $this->container->get('ras_flash_alert.alert_publisher');
     }
 
     /**
