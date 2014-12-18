@@ -12,7 +12,7 @@
 namespace Ras\Bundle\FlashAlertBundle\Tests\Controller;
 
 
-use Ras\Bundle\FlashAlertBundle\Service\AlertReportingService;
+use Ras\Bundle\FlashAlertBundle\Model\AlertReporter;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -31,8 +31,8 @@ class AlertControllerTest extends WebTestCase
         $this->assertEquals(Response::HTTP_OK, $client->getResponse()->getStatusCode());
 
         $client = static::createClient();
-        /** @var AlertReportingService $alertService */
-        $alertService = $client->getContainer()->get('Ras.Alert.AlertReportingService');
+        /** @var AlertReporter $alertService */
+        $alertService = $client->getContainer()->get('ras_flash_alert.alert_reporter');
         $alertMessage = "Test error flash alert";
         $alertService->addError($alertMessage);
         $crawler1 = $client->request('GET', '/display_alerts');

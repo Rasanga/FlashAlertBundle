@@ -1,0 +1,49 @@
+{% spaceless %}
+    {% for alert in alertPublisher %}
+        <div
+                {% if isAddStyles %}
+                    style="
+                            padding: 15px; margin-bottom: 20px; border: 1px solid transparent; border-radius: 4px;
+                            padding-right: 35px;
+
+                    {% if alert.type == "success" %}
+                            color: #3c763d; background-color: #b9df90; border-color: #a0d468;
+                    {% elseif alert.type == "error" %}
+                            color: #a94442; background-color: #f2838f; border-color: #ed5565;
+                    {% elseif alert.type == "warning" %}
+                            color: #8a6d3b; background-color: #ffdd87; border-color: #ffce54;
+                    {% elseif alert.type == "info" %}
+                            color: #31708f; background-color: #7cd1ef; border-color: #4fc1e9;
+                    {% endif %}
+                            "
+                {% else %}
+                    class="alert alert-{{ alert.type }} alert-dismissable"
+                {% endif %}
+                >
+            <button type="button" class="alert-close"
+                    {% if isAddStyles %}
+                        style="
+                            position: relative; top: -2px; right: -21px; float: right; font-size: 21px; font-weight: bold;
+                            line-height: 1; color: #000; text-shadow: 0 1px 0 #fff; filter: alpha(opacity=20);
+                            opacity: .2; -webkit-appearance: none; padding: 0; cursor: pointer;
+                            background: transparent; border: 0;
+                            "
+                        onmouseover="
+                            this.style.color            = 'black';
+                            this.style.textDecoration   = 'none';
+                            this.style.cursor           = 'pointer'
+                            this.style.filter           = 'alpha(opacity=50)';
+                            this.style.opacity          = '.5';
+                            "
+                        onmouseout="
+                            this.style.filter           = 'alpha(opacity=20)';
+                            this.style.opacity          = '.2';
+                            "
+                    {% endif %}
+                    >
+                &times;
+            </button>
+            {{ alert.message | raw  }}
+        </div>
+    {% endfor %}
+{% endspaceless %}

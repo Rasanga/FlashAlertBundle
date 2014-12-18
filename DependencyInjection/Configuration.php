@@ -13,6 +13,11 @@ use Symfony\Component\Config\Definition\ConfigurationInterface;
 class Configuration implements ConfigurationInterface
 {
     /**
+     * Default alert view template
+     */
+    const DEFAULT_TEMPLATE = 'RasFlashAlertBundle::layout.html.twig';
+
+    /**
      * {@inheritDoc}
      */
     public function getConfigTreeBuilder()
@@ -20,9 +25,21 @@ class Configuration implements ConfigurationInterface
         $treeBuilder = new TreeBuilder();
         $rootNode = $treeBuilder->root('ras_flash_alert');
 
-        // Here you should define the parameters that are allowed to
-        // configure your bundle. See the documentation linked above for
-        // more information on that topic.
+        $rootNode
+            ->children()
+                ->scalarNode('template')
+                    ->defaultValue(self::DEFAULT_TEMPLATE)
+                    ->end()
+
+                ->booleanNode('isAddStyles')
+                    ->defaultTrue()
+                    ->end()
+
+                ->booleanNode('isAddJsAlertClose')
+                    ->defaultTrue()
+                    ->end()
+            ->end()
+        ;
 
         return $treeBuilder;
     }

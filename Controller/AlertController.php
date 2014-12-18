@@ -16,25 +16,29 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class AlertController extends Controller
 {
-
+    /**
+     * @deprecated
+     *
+     * @param bool $isAddStyles
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
     public function displayAlertsAction($isAddStyles = true)
     {
         return $this->render(
-            'RasFlashAlertBundle:Alert:alerts.html.twig',
+            'RasFlashAlertBundle::layout.html.twig',
             array(
-                'flashAlerts'   =>  $this->getAlertPublishingService()->getAlerts(),
-                'isAddStyles'     =>  $isAddStyles
+                'alertPublisher'    =>  $this->getAlertPublisher(),
+                'isAddStyles'       =>  $isAddStyles
             )
         );
     }
 
     /**
-     * @return \Ras\Bundle\FlashAlertBundle\Service\AlertPublishingService
+     * @return \Ras\Bundle\FlashAlertBundle\Model\AlertPublisher
      *
      */
-    protected function getAlertPublishingService()
+    private function getAlertPublisher()
     {
-        return $this->get('Ras.Alert.AlertPublishingService');
+        return $this->get('ras_flash_alert.alert_publisher');
     }
-
-} 
+}

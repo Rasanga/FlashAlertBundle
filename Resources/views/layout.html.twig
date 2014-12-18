@@ -1,0 +1,11 @@
+{% if get_alert_publisher() | length %}
+
+    <div id="ras-flash-alerts">
+        {% include 'RasFlashAlertBundle::FlashAlert/flashAlerts.html.twig' %}
+    </div>
+
+    {% if isAddJsAlertClose %}
+        {% include 'RasFlashAlertBundle::FlashAlert/jsAlertClose.html.twig' %}
+    {% endif %}
+
+{% endif %}

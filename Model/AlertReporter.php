@@ -1,7 +1,7 @@
 <?php
 /**
- * AlertReportingService.php
- * Definition of class AlertReportingService
+ * AlertReporter.php
+ * Definition of class AlertReporter
  *
  * Created 28/08/14 23:58
  *
@@ -9,32 +9,23 @@
  * Copyright (c) 2014, The MIT License (MIT)
  */
 
-namespace Ras\Bundle\FlashAlertBundle\Service;
+namespace Ras\Bundle\FlashAlertBundle\Model;
 
 
-use Ras\Bundle\FlashAlertBundle\Model\Alert;
-use Ras\Bundle\FlashAlertBundle\Model\AlertInterface;
-use Symfony\Component\HttpFoundation\Session\Session;
-
-class AlertReportingService extends AbstractAlertService
+class AlertReporter
 {
+    /**
+     * @var AlertManagerInterface
+     */
+    private $alertManager;
+
 
     /**
-     * @param Session $session
+     * @param AlertManagerInterface $alertManager
      */
-    public function __construct(Session $session)
+    public function __construct(AlertManagerInterface $alertManager)
     {
-        parent::__construct($session);
-    }
-
-    /**
-     * Adds alert to session flash bag
-     *
-     * @param AlertInterface $alert
-     */
-    protected function addAlert(AlertInterface $alert)
-    {
-        $this->session->getFlashBag()->add($alert->getType(), $alert->getMessage());
+        $this->alertManager = $alertManager;
     }
 
     /**
@@ -44,7 +35,7 @@ class AlertReportingService extends AbstractAlertService
      */
     public function addError($message)
     {
-        $this->addAlert(
+        $this->alertManager->addAlert(
             new Alert(AlertInterface::ERROR_ALERT, $message)
         );
     }
@@ -56,7 +47,7 @@ class AlertReportingService extends AbstractAlertService
      */
     public function addSuccess($message)
     {
-        $this->addAlert(
+        $this->alertManager->addAlert(
             new Alert(AlertInterface::SUCCESS_ALERT, $message)
         );
     }
@@ -68,7 +59,7 @@ class AlertReportingService extends AbstractAlertService
      */
     public function addInfo($message)
     {
-        $this->addAlert(
+        $this->alertManager->addAlert(
             new Alert(AlertInterface::INFO_ALERT, $message)
         );
     }
@@ -80,9 +71,8 @@ class AlertReportingService extends AbstractAlertService
      */
     public function addWarning($message)
     {
-        $this->addAlert(
+        $this->alertManager->addAlert(
             new Alert(AlertInterface::WARNING_ALERT, $message)
         );
     }
-
 } 
