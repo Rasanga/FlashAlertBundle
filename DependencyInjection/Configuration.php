@@ -14,8 +14,6 @@ class Configuration implements ConfigurationInterface
 {
     const DEFAULT_TEMPLATE = 'RasFlashAlertBundle::layout.html.twig';
 
-    const DEFAULT_IS_ADD_STYLES = true;
-
     /**
      * {@inheritDoc}
      */
@@ -30,8 +28,8 @@ class Configuration implements ConfigurationInterface
                     ->defaultValue(self::DEFAULT_TEMPLATE)
                     ->end()
 
-                ->scalarNode('isAddStyles')
-                    ->defaultValue(self::DEFAULT_IS_ADD_STYLES)
+                ->booleanNode('isAddStyles')
+                    ->defaultTrue()
                     ->end()
             ->end()
         ;

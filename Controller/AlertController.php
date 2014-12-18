@@ -16,6 +16,12 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class AlertController extends Controller
 {
+    /**
+     * @deprecated
+     *
+     * @param bool $isAddStyles
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
     public function displayAlertsAction($isAddStyles = true)
     {
         return $this->render(
@@ -31,7 +37,7 @@ class AlertController extends Controller
      * @return \Ras\Bundle\FlashAlertBundle\Model\AlertPublisher
      *
      */
-    protected function getAlertPublisher()
+    private function getAlertPublisher()
     {
         return $this->get('ras_flash_alert.alert_publisher');
     }
