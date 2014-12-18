@@ -129,3 +129,7 @@ CHANGELOG
 LICENSE
 =======
 FlashAlertBundle is licensed under the MIT Open Source license.
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/rasanga/flashalertbundle/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
