@@ -122,8 +122,8 @@ Then you can <b>define your own styles</b> to match alert classes such as `alert
 CHANGELOG
 =======
 #### 2.0
-    Add twig method for rendering alerts - {{ render_flash_alerts() }}
-    Add twig method for retrieving alerts - {{ get_alert_publisher() }}
+    Add twig method for rendering alerts: {{ render_flash_alerts() }}
+    Add twig method for retrieving alerts: {{ get_alert_publisher() }}
     Deprecated controller view render 
 
 LICENSE
