@@ -1,3 +1,3 @@
 ras_flash_alert_display_alerts:
-    path:     /display_alerts
+    path:     /ras_flash_alert/display_alerts
     defaults: { _controller: RasFlashAlertBundle:Alert:displayAlerts }

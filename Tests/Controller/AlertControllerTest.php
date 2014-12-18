@@ -26,21 +26,24 @@ class AlertControllerTest extends WebTestCase
     public function testDisplayAlerts()
     {
         $client = static::createClient();
-        $client->request('GET', '/display_alerts');
+        $client->request('GET', '/ras_flash_alert/display_alerts');
 
         $this->assertEquals(Response::HTTP_OK, $client->getResponse()->getStatusCode());
 
         $client = static::createClient();
-        /** @var AlertReporter $alertService */
-        $alertService = $client->getContainer()->get('ras_flash_alert.alert_reporter');
+        /** @var AlertReporter $alertReporter */
+        $alertReporter = $client->getContainer()->get('ras_flash_alert.alert_reporter');
         $alertMessage = "Test error flash alert";
-        $alertService->addError($alertMessage);
-        $crawler1 = $client->request('GET', '/display_alerts');
+        $alertReporter->addError($alertMessage);
+
+        $crawler1 = $client->request('GET', '/ras_flash_alert/display_alerts');
+
+        print_r($client->getResponse()->getContent());
 
         // Test: flash alert that has been added recently
         $this->assertTrue($crawler1->filter("html:contains(\"{$alertMessage}\")")->count() === 1);
 
-        $crawler2 = $client->request('GET', '/display_alerts');
+        $crawler2 = $client->request('GET', '/ras_flash_alert/display_alerts');
 
         // Test: flash alert has already been retrieved
         $this->assertTrue($crawler2->filter("html:contains(\"{$alertMessage}\")")->count() === 0);

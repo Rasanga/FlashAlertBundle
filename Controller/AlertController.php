@@ -20,15 +20,17 @@ class AlertController extends Controller
      * @deprecated
      *
      * @param bool $isAddStyles
+     * @param bool $isAddJsAlertClose
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function displayAlertsAction($isAddStyles = true)
+    public function displayAlertsAction($isAddStyles = true, $isAddJsAlertClose = true)
     {
         return $this->render(
             'RasFlashAlertBundle::layout.html.twig',
             array(
-                'alertPublisher'    =>  $this->getAlertPublisher(),
-                'isAddStyles'       =>  $isAddStyles
+                'alertPublisher'        =>  $this->getAlertPublisher(),
+                'isAddStyles'           =>  $isAddStyles,
+                'isAddJsAlertClose'     =>  $isAddJsAlertClose
             )
         );
     }
