@@ -23,7 +23,7 @@ services:
         tags:
             - { name: twig.extension }
 
-    # template helper
+    # template helpers
     ras_flash_alert.templating.flash_alerts_helper:
         class: Ras\Bundle\FlashAlertBundle\Templating\Helper\FlashAlertsHelper
         arguments:

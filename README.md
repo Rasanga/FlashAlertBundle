@@ -91,7 +91,7 @@ Add the following twig code where you want to display alert messages:
 
 Configuration
 =====
-The following parameters can be overriden in your config.yml or similar:
+The following parameters can be overriden in your `config.yml` or similar:
 ```
 ras_flash_alert:
     template: '::flashAlerts.html.twig'     # defaults to 'RasFlashAlertBundle::layout.html.twig'
@@ -105,9 +105,9 @@ These can also be passed as parameters in the view when rendering alerts - for e
 ```
 
 ## Override view template
-1. Crete template in the /Resources/views/ or in your bundle
-2. Retrieve alerts into your template with {{ get_alert_publisher() }}
-3. Include template blocks in FlashAlertBundle/Resources/views/FlashAlert directory or define your own blocks (follow FlashAlertBundle/Resources/views/FlashAlert/flashAlerts.html.twig to see how you can define your own template) 
+1. Crete template in the `/Resources/views/` or in your bundle
+2. Retrieve alerts into your template with `{{ get_alert_publisher() }}`
+3. Include template blocks in `FlashAlertBundle/Resources/views/FlashAlert` directory or define your own blocks (follow `FlashAlertBundle/Resources/views/FlashAlert/flashAlerts.html.twig` to see how you can define your own template) 
 
 ## Add custom styles
 The bundle default template has styles defined by default. However, you can turn off default styles by configuring
@@ -122,8 +122,8 @@ Then you can <b>define your own styles</b> to match alert classes such as `alert
 CHANGELOG
 =======
 #### 2.0
-    Add twig method for rendering alerts: {{ render_flash_alerts() }}
-    Add twig method for retrieving alerts: {{ get_alert_publisher() }}
+    Add twig method for rendering alerts: `{{ render_flash_alerts() }}`
+    Add twig method for retrieving alerts: `{{ get_alert_publisher() }}`
     Deprecated controller view render 
 
 LICENSE
