@@ -5,8 +5,8 @@
  *
  * Created 17/12/14 05:15
  *
- * @author Rasanga Perera <rasanga@byng-systems.com>
- * @copyright (c) 2014, Byng Systems/SkillsWeb Ltd
+ * @author Rasanga Perera <rasangaperera@gmail.com>
+ * @copyright (c) 2014, The MIT License (MIT)
  */
 
 namespace Ras\Bundle\FlashAlertBundle\Model;

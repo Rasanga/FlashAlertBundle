@@ -6,7 +6,7 @@
  * Created 16/12/14 18:50
  *
  * @author Rasanga Perera <rasangaperera@gmail.com>
- * @copyright (c) 2014, Byng Systems/SkillsWeb Ltd
+ * @copyright (c) 2014, The MIT License (MIT)
  */
 
 namespace Ras\Bundle\FlashAlertBundle\Templating\Helper;
