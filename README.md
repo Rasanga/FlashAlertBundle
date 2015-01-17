@@ -19,7 +19,7 @@ Table of Contents
 3. [Configuration](#configuration)
   1. [Override view template](#override-view-template)
   2. [Add custom styles](#add-custom-styles)
-4. [Upgrade](#upgrade)
+4. [Changelog](#changelog)
 5. [License](#license)
 
 
@@ -129,3 +129,7 @@ CHANGELOG
 LICENSE
 =======
 FlashAlertBundle is licensed under the MIT Open Source license.
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/rasanga/flashalertbundle/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
