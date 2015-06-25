@@ -1,6 +1,6 @@
 <script type="text/javascript">
     // Pure JavaScript implementation for flash alerts
-    window.onload = function () {
+    var onLoad = function () {
         var elems = document.getElementById("ras-flash-alerts").getElementsByTagName('button');
         for (var i in elems) {
             if ((" " + elems[i].className + " ").indexOf("alert-close") > -1) {
@@ -24,4 +24,8 @@
             o -= 0.1;
         }, 25);
     };
+
+    if (window.attachEvent) {window.attachEvent('onload', onLoad);}
+    else if (window.addEventListener) {window.addEventListener('load', onLoad, false);}
+    else {document.addEventListener('load', onLoad, false);}
 </script>
