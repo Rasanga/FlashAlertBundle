@@ -1,5 +1,7 @@
 FlashAlertBundle
 ========================
+
+[![Join the chat at https://gitter.im/rasanga/FlashAlertBundle](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/rasanga/FlashAlertBundle?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 FlashAlertBundle is an open source Bundle which simplifies displaying flash alerts such as success, error, info and warning
 
 [![Build Status](https://scrutinizer-ci.com/g/rasanga/FlashAlertBundle/badges/build.png?b=master)](https://scrutinizer-ci.com/g/rasanga/FlashAlertBundle/build-status/master)
