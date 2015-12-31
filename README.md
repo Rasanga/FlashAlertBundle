@@ -105,7 +105,7 @@ These can also be passed as parameters in the view when rendering alerts - for e
 ```
 
 ## Override view template
-1. Crete template in the `/Resources/views/` or in your bundle
+1. Create template in the `/Resources/views/` or in your bundle
 2. Retrieve alerts into your template with `{{ get_alert_publisher() }}`
 3. Include template blocks in `FlashAlertBundle/Resources/views/FlashAlert` directory or define your own blocks (follow `FlashAlertBundle/Resources/views/FlashAlert/flashAlerts.html.twig` to see how you can define your own template) 
 
