@@ -12,7 +12,7 @@
 namespace Ras\Bundle\FlashAlertBundle\Model;
 
 
-class AlertReporter
+class AlertReporter implements AlertReporterInterface
 {
     /**
      * @var AlertManagerInterface
@@ -29,9 +29,7 @@ class AlertReporter
     }
 
     /**
-     * Adds error alert to session flash bag
-     *
-     * @param string $message
+     * @inheritdoc
      */
     public function addError($message)
     {
@@ -41,9 +39,7 @@ class AlertReporter
     }
 
     /**
-     * Adds success alert to session flash bag
-     *
-     * @param string $message
+     * @inheritdoc
      */
     public function addSuccess($message)
     {
@@ -53,9 +49,7 @@ class AlertReporter
     }
 
     /**
-     * Adds information alert to session flash bag
-     *
-     * @param string $message
+     * @inheritdoc
      */
     public function addInfo($message)
     {
@@ -65,9 +59,7 @@ class AlertReporter
     }
 
     /**
-     * Adds warning (block) alert to session flash bag
-     *
-     * @param string $message
+     * @inheritdoc
      */
     public function addWarning($message)
     {
