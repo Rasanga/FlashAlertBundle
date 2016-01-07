@@ -41,6 +41,16 @@ class AlertReporter implements AlertReporterInterface
     /**
      * @inheritdoc
      */
+    public function addDanger($message)
+    {
+        $this->alertManager->addAlert(
+            new Alert(AlertInterface::DANGER_ALERT, $message)
+        );
+    }
+
+    /**
+     * @inheritdoc
+     */
     public function addSuccess($message)
     {
         $this->alertManager->addAlert(
