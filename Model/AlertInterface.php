@@ -24,6 +24,11 @@ interface AlertInterface
      * @var string
      */
     const ERROR_ALERT = 'error';
+    
+    /**
+     * @var string
+     */
+    const DANGER_ALERT = 'danger';
 
     /**
      * @var string
