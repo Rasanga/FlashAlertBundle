@@ -44,10 +44,10 @@ class FlashAlertsExtension extends \Twig_Extension
     public function getFunctions()
     {
         return array(
-            'get_alert_publisher' => new \Twig_Function_Method($this, 'getAlertPublisher', array(
+            new \Twig_SimpleFunction('get_alert_publisher', array($this, 'getAlertPublisher'), array(
                 'is_safe'   =>  array('html')
             )),
-            'render_flash_alerts' => new \Twig_Function_Method($this, 'renderFlashAlerts', array(
+            new \Twig_SimpleFunction('render_flash_alerts', array($this, 'renderFlashAlerts'), array(
                 'is_safe'   =>  array('html')
             ))
         );
