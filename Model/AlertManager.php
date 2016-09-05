@@ -84,6 +84,7 @@ class AlertManager implements AlertManagerInterface
         return array(
             AlertInterface::SUCCESS_ALERT,
             AlertInterface::ERROR_ALERT,
+            AlertInterface::DANGER_ALERT,
             AlertInterface::WARNING_ALERT,
             AlertInterface::INFO_ALERT
         );
