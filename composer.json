@@ -1,5 +1,5 @@
 {
-    "name": "ras/flash-alert-bundle",
+    "name": "btcctb/flash-alert-bundle",
     "license": "MIT",
     "type": "symfony-bundle",
     "description": "FlashAlertBundle provides a simplified way to handle (add/display) Symfony flash messages. Client side scripts are written in pure JavaScript.",
